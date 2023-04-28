@@ -1,0 +1,34 @@
+DROP DATABASE IF EXISTS equipo;
+CREATE DATABASE equipo;
+USE equipo;
+
+DROP TABLE IF EXISTS Equipo;
+CREATE TABLE Equipo (
+	idEquipo INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(60) NOT NULL,
+    titulares INT(30) UNSIGNED NOT NULL,
+    suplentes INT(20) UNSIGNED NOT NULL,
+    directorTecnico VARCHAR(60) NOT NULL,
+    puntos INT UNSIGNED DEFAULT 0,
+    partidosJugados INT UNSIGNED DEFAULT 0
+);
+
+INSERT INTO Equipo(nombre,titulares,suplentes, directorTecnico, puntos, partidosJugados) 
+VALUES("Boca", 25, 15, "Miguel Ángel Russo", 8, 4),
+("River Plate", 22, 18, "Marcelo Gallardo", 6, 3),
+("Racing Club", 27, 13, "Juan Antonio Pizzi", 3, 2),
+("Independiente", 23, 17, "Julio Falcioni", 10, 5),
+("San Lorenzo", 20, 10, "Diego Dabove", 2, 2),
+("Huracán", 24, 14, "Néstor Apuzzo", 5, 3),
+("Estudiantes (LP)", 28, 12, "Ricardo Zielinski", 12, 6),
+("Vélez Sarsfield", 21, 19, "Mauricio Pellegrino", 9, 4),
+("Gimnasia (LP)", 26, 16, "Leandro Martini", 7, 3),
+("Rosario Central", 29, 11, "Cristian González", 4, 2),
+("Newell's Old Boys", 30, 10, "Germán Burgos", 11, 6),
+("Arsenal", 20, 20, "Sergio Rondina", 1, 2),
+("Talleres (C)", 27, 13, "Alexander Medina", 13, 8),
+("Banfield", 23, 17, "Javier Sanguinetti", 15, 7);
+
+SELECT * FROM Equipo;
+
+SELECT * FROM Equipo WHERE nombre="Boca";
